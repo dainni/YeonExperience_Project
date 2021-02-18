@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	layout:decorator="layout">
+<head>
+<meta charset="UTF-8">
+<title>쿠폰관리</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" th:href="@{/static/assets/css/productmain.css}" />
+</head>
+
+<body>
+	    <!-- Header -->
+	    <header id="pdHeader">
+	    </header>
+
+	<!-- Table -->
+	<section id="one" class="wrapper style2">
+		<div class="inner">
+			<div class="box">
+				<div class="content">
+					<h2 class="align-center">쿠폰등록</h2>
+
+					<div class="table-wrapper">
+						<table>
+							<thead>
+								<tr>
+									<th>쿠폰번호</th>
+									<th>쿠폰이름</th>
+									<th>할인금액</th>
+									<th>쿠폰개시일</th>
+									<th>쿠폰만료일</th>
+								</tr>
+							</thead>
+							<tbody>
+							<th:block th:each = "i:${iplists}">
+							<tr>
+							 
+							</tr>
+							</th:block>
+								 
+							</tbody>
+							<tfoot>
+								<tr align="center">
+									<td colspan="6"><a>1</a></td>
+								</tr>
+								<tr align="right">
+									<td colspan="6">
+									<a th:href="@{couponForm}" class="button alt">입고등록</a></td>
+								</tr>
+							</tfoot>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<footer id="footer" class="wrapper" th:include="thymeleaf/footer"></footer>
+	<!-- Scripts -->
+	<script th:src=@{assets/js/jquery.min.js}></script>
+	<script th:src=@{assets/js/jquery.scrolly.min.js}></script>
+	<script th:src=@{assets/js/jquery.scrollex.min.js}></script>
+	<script th:src=@{assets/js/skel.min.js}></script>
+	<script th:src=@{assets/js/util.js}></script>
+	<script th:src=@{assets/js/product.js}></script>
+</body>
+
+</html>

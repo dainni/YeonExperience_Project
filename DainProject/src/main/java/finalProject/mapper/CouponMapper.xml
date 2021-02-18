@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace = "finalProject.mapper.CouponMapper">
+
+<sql id="couponbaseColumn">
+ COUPON_NO,  COUPON_NAME,  DISCOUNT,COUPON_START, COUPON_END, USER_ID 
+</sql>
+
+<insert id="couponInsert" parameterType="finalProject.domain.CouponDTO">
+insert into coupon
+(<include refid="couponbaseColumn" />)
+values (ROUND(DBMS_RANDOM.VALUE(100, 1000000),0),#{couponName},#{disCount},#{couponStart},#{couponEnd},null)
+</insert>
+
+</mapper>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+     layout:decorator="layout">
+<head>
+<meta charset="UTF-8">
+<title>발주리스트</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" th:href="@{/static/assets/css/productmain.css}" />
+</head>
+<body>
+	    <!-- Header -->
+	    <header id="pdHeader">
+	    </header>
+
+	<!-- Table -->
+	<section id="one" class="wrapper style2">
+		<div class="inner">
+			<div class="box">
+				<div class="content">
+					<h2 class="align-center">발주리스트</h2>
+
+					<div class="table-wrapper">
+							<table>
+								<thead>
+									<tr>
+										<th>발주번호</th>
+										<th>발주일자</th>
+										<th>사업자번호</th>
+										<th>상품번호</th>
+									</tr>
+								</thead>
+								<tbody>
+									 <th:block th:each = "po:${pdolists}">
+									 <tr>
+									 <td><a th:href = "@{/pdorder/pdorderDetail(orderNo = ${po.orderNo})}">[[${po.orderNo}]]</a></td>
+									 <td th:text = "${#dates.format(po.orderDate,'yyyy-MM-dd')}" >
+									 <td>[[${po.gcompanyNo}]]</td>
+									 <td>[[${po.goodsNo}]]</td>
+									 </tr>
+									 </th:block>
+								</tbody>
+								<tfoot>
+									<tr align="center">
+										<td colspan="4"><a>1</a></td>
+									</tr>
+									<tr align="right">
+										<td colspan="4"><font size = "2">
+											<a th:href = "@{pdorderForm}"><input type = "button" value = "등록"></a></font></td>
+									</tr>
+								</tfoot>
+							</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Footer -->
+		<footer id="footer" class="wrapper" th:include="thymeleaf/footer"></footer>
+		<!-- Scripts -->
+		<script th:src=@{assets/js/jquery.min.js}></script>
+		<script th:src=@{assets/js/jquery.scrolly.min.js}></script>
+		<script th:src=@{assets/js/jquery.scrollex.min.js}></script>
+		<script th:src=@{assets/js/skel.min.js}></script>
+		<script th:src=@{assets/js/util.js}></script>
+		<script th:src=@{assets/js/product.js}></script>
+</body>
+ 
+</html>

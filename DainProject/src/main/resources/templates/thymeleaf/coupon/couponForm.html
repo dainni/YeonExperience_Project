@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	layout:decorator="layout">
+<head>
+<meta charset="UTF-8">
+<title>쿠폰등록</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" th:href="@{/static/assets/css/productmain.css}" />
+<style type="text/css">
+td {
+	background-color: white;
+}
+
+#ipfoot {
+	background-color: #F2F2F2;
+}
+</style>
+
+</head>
+<body>
+	    <!-- Header -->
+	    <header id="pdHeader">
+	    </header>
+	<!-- Registration Form -->
+	<section id="one" class="wrapper style2">
+		<div class="inner">
+			<div class="box">
+				<div class="content">
+					<form th:action="@{/coupon/couponFormPro}" method="post" name="couponForm" th:object = "${couponCommand}">
+						<h2 class="align-center">쿠폰등록</h2>
+						<div class="table-wrapper">
+							<table cellpadding="0" cellspacing="0">
+								<tr>
+									<td>
+										<div align="center">쿠폰이름</div>
+									</td>
+									<td><input name="couponName" type="text" size="50" maxlength="50" /></td>
+								</tr>
+								
+								<tr>
+									<td>
+										<div align="center">할인금액</div>
+									</td>
+									<td><input name="discount" type="text" size="10" maxlength="10" /></td>
+			
+							</tr>
+								<tr>
+									<td>
+										<div align="center">쿠폰개시일</div>
+									</td>
+									<td><input name="couponStart" type="date" size="10" maxlength="10" /></td>
+								</tr>
+								
+								<tr>
+									<td>
+										<div align="center">쿠폰만료일</div>
+									</td>
+									<td><input name="couponEnd" type="date" size="10" maxlength="10" /></td>
+								</tr>
+								 
+								<tr align="right">
+									<td colspan="2" ><input type="submit" value="등록" />
+									<a th:href="@{/couponList}"><input
+											type="button" value="목록가기" /></a></td>
+								</tr>
+
+							</table>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<!-- Footer -->
+	<footer id="footer" class="wrapper" th:include="thymeleaf/footer"></footer>
+	<!-- Scripts -->
+	<script th:src=@{assets/js/jquery.min.js}></script>
+	<script th:src=@{assets/js/jquery.scrolly.min.js}></script>
+	<script th:src=@{assets/js/jquery.scrollex.min.js}></script>
+	<script th:src=@{assets/js/skel.min.js}></script>
+	<script th:src=@{assets/js/util.js}></script>
+	<script th:src=@{assets/js/product.js}></script>
+</body>
+
+</html>

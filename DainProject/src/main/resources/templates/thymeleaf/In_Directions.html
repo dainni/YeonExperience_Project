@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	layout:decorator="layout">
+<head>
+<title>YeonExperience</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" th:href="@{/static/assets/css/main.css}" />
+<style type="text/css">
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR&display=swap');
+#dain {font-family: 'Noto Serif KR', serif;
+}
+</style>
+</head>
+<body class="subpage">
+
+	<!-- Header -->
+	<header id="header">
+		<div class="logo">
+			<a href="/">YeonExperience<span> by yeondain</span></a>
+		</div>
+		<a href="#menu">Menu</a>
+	</header>
+
+	<!-- Nav -->
+			<nav id="menu" th:include="thymeleaf/nav"></nav>
+
+	<!-- One -->
+	<section id="One" class="wrapper style3">
+		<div class="inner">
+			<header class="align-center">
+					<p>
+					<font size="5" color = "#fff">오 시 는 길  안 내</font>
+				</p>
+				<h2>YeonExperience Directions</h2>
+			</header>
+		</div>
+	</section>
+
+	<!-- Two -->
+	<section id="two" class="wrapper style2">
+		<div class="inner" id = "dain">
+			<div class="box">
+				<div class="content" align="center">
+					<p>
+						지하철<br />3호선 다인역 하차, 1번 출구로 나와서 미술관까지 약 900m (약 14분 소요)<br />
+						5호선 광희역 하차, 2번 출구로 나와서 미술관까지 약 1km (약 17분 소요)
+					</p>
+					<iframe
+						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10947.532489137984!2d126.97710159834354!3d37.57708265405022!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca2c14dacd53d%3A0x205c23120e574816!2z6rWt66a97ZiE64yA66-47Iig6rSAIOyEnOyauA!5e0!3m2!1sko!2skr!4v1607936715113!5m2!1sko!2skr"
+						width="800" height="450" frameborder="0" style="border: 0;"
+						allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+					 
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<footer id="footer" th:include="thymeleaf/footer">
+		<div class="container">
+			<ul class="icons">
+				<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+				<li><a href="#" class="icon fa-facebook"><span
+						class="label">Facebook</span></a></li>
+				<li><a href="#" class="icon fa-instagram"><span
+						class="label">Instagram</span></a></li>
+				<li><a href="#" class="icon fa-envelope-o"><span
+						class="label">Email</span></a></li>
+			</ul>
+		</div>
+		<div class="copyright">&copy; Untitled. All rights reserved.</div>
+	</footer>
+
+	<!-- Scripts -->
+	<script th:src=@{/static/assets/js/jquery.min.js}></script>
+	<script th:src=@{/static/assets/js/jquery.scrollex.min.js}></script>
+	<script th:src=@{/static/assets/js/skel.min.js}></script>
+	<script th:src=@{/static/assets/js/util.js}></script>
+	<script th:src=@{/static/assets/js/main.js}></script>
+</body>
+
+</html>

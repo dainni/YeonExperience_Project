@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	layout:decorator="layout">
+<head>
+<title>YeonExperience</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" th:href="@{/static/assets/css/main.css}" />
+<style type="text/css">
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR&display=swap');
+#dain {font-family: 'Noto Serif KR', serif;
+}
+
+table,td {
+width : 800px;
+background-color : white;
+text-align: center;
+}
+
+#bg{
+background-color : #EEEEEE; }
+
+</style>
+</head>
+<body class="subpage">
+
+	<!-- Header -->
+	<header id="header">
+		<div class="logo">
+			<a href="/">YeonExperience<span> by yeondain</span></a>
+		</div>
+		<a href="#menu">Menu</a>
+	</header>
+
+	<!-- Nav -->
+			<nav id="menu" th:include="thymeleaf/nav"></nav>
+
+	<!-- One -->
+	<section id="One" class="wrapper style3">
+		<div class="inner">
+			<header class="align-center">
+				<p>
+					<font size="5" color = "#fff">주 차 안 내</font>
+				</p>
+				<h2>YeonExperience Parking</h2>
+			</header>
+		</div>
+	</section>
+
+	<!-- Two -->
+	<section id="two" class="wrapper style2">
+		<div class="inner" id = "dain">
+			<div class="box">
+				<div class="content" align="center">
+					<h4>주 차 요 금</h4>
+					<p>
+						최초 1시간 : 3000원 (초과요금 10분당 500원, 1일 최대요금 20,000원)<br />운영시간
+						: 08:00 ~ 23:00 &nbsp; 주차가능대수 : 384대 (지하 2, 3층 주차장) <br />※ 15인승 이하의
+						승용차만 주차 가능 <br/>※ 주차장 이동방법 : 관람종료시간 이후에는 푸드코트가 있는 교육동 엘리베이터 이용
+					</p>
+				<img alt="" th:src= @{static/images/park.PNG} height = "400px" width = "800px">
+					<br/>
+					<br/>
+									<table class="alt">
+										<tbody>
+											<tr>
+												<td id = "bg">구분</td>
+												<td id = "bg">할인적용</td>
+											</tr>
+											<tr>
+												<td>국가유공자 및 유족</td>
+												<td rowspan = "4">50%</td>
+											</tr>
+											<tr>
+												<td>장애인</td>
+											</tr>
+											<tr>
+												<td>1,000cc 이하 경차</td>
+											</tr>
+											<tr>
+												<td>하이브리드 차량</td>
+											</tr>
+											<tr>
+												<td>편의시설 이용시</td>
+												<td rowspan="2">1시간할인</td>
+											</tr>
+											<tr>
+												<td>문화시설 이용시</td>
+											</tr>
+										</tbody>
+									</table>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<footer id="footer" th:include="thymeleaf/footer">
+		<div class="container">
+			<ul class="icons">
+				<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+				<li><a href="#" class="icon fa-facebook"><span
+						class="label">Facebook</span></a></li>
+				<li><a href="#" class="icon fa-instagram"><span
+						class="label">Instagram</span></a></li>
+				<li><a href="#" class="icon fa-envelope-o"><span
+						class="label">Email</span></a></li>
+			</ul>
+		</div>
+		<div class="copyright">&copy; Untitled. All rights reserved.</div>
+	</footer>
+
+	<!-- Scripts -->
+	<script th:src=@{/static/assets/js/jquery.min.js}></script>
+	<script th:src=@{/static/assets/js/jquery.scrollex.min.js}></script>
+	<script th:src=@{/static/assets/js/skel.min.js}></script>
+	<script th:src=@{/static/assets/js/util.js}></script>
+	<script th:src=@{/static/assets/js/main.js}></script>
+</body>
+
+</html>

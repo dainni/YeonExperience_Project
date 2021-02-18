@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	layout:decorator="layout">
+<head>
+<meta charset="UTF-8">
+<title>1:1문의 게시판</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" th:href="@{/static/assets/css/productmain.css}" />
+<style type="text/css">
+td{background-color : white;}
+</style>
+</head>
+
+<body>
+	<!-- Header -->
+	<header role="pdHeader" th:include="thymeleaf/pdheader" id="pdHeader">
+		<a href="#Productnav" class="pdtoggle"><span>메뉴</span></a>
+	</header>
+	<!-- Nav -->
+	<nav id="Productnav" th:include="thymeleaf/Productnav"></nav>
+
+	<!-- Registration Form -->
+	<section id="one" class="wrapper style2">
+		<div class="inner">
+			<div class="box">
+				<div class="content">
+					<h2 class="align-center">1:1문의 신청 상세보기</h2>
+
+					<div class="table-wrapper">
+						<table cellpadding="0" cellspacing="0">
+							<tr>
+								<td>
+									<div align="center">작성자</div>
+								</td>
+								<td>[[${podto.userId}]]</td>
+							</tr>
+
+							<tr>
+								<td>
+									<div align="center">제 목</div>
+								</td>
+								<td>[[${podto.glibSubject}]]</td>
+							</tr>
+
+							<tr>
+								<td>
+									<div align="center">내 용</div>
+								</td>
+								<td>[[${podto.glibContent}]]</td>
+							</tr>
+
+							<tr>
+								<td>
+									<div align="center">파일첨부</div>
+								</td>
+								<td>[[${podto.glibFile}]]<br/>
+								[[${podto.goodsNo}]]</td>
+							</tr>
+
+							<tr align="center">
+								<td colspan="2">
+								<a th:href="@{/pdone/pdoneAnswer}"><input type="button" value="답변" id="ans" /></a> 
+								<a th:href="@{/pdone/pdoneModify(glibNo = ${podto.glibNo})}"><input type="button" value="수정" id="pdonemodify" /></a>
+								<a th:href="@{/pdone/pdoneDel(glibNo = ${podto.glibNo})}"><input type="button" value="삭제" id="pdonedel" /></a> 
+								<a th:href="@{/pdone/pdoneList}"><input type="button" value="목록" id="pdonehome" /></a></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<!-- Footer -->
+	<footer id="footer" class="wrapper" th:include="thymeleaf/footer"></footer>
+	<!-- Scripts -->
+	<script th:src=@{assets/js/jquery.min.js}></script>
+	<script th:src=@{assets/js/jquery.scrolly.min.js}></script>
+	<script th:src=@{assets/js/jquery.scrollex.min.js}></script>
+	<script th:src=@{assets/js/skel.min.js}></script>
+	<script th:src=@{assets/js/util.js}></script>
+	<script th:src=@{assets/js/product.js}></script>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	layout:decorator="layout">
+<head>
+<meta charset="UTF-8">
+<title>입고관리</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" th:href="@{/static/assets/css/productmain.css}" />
+<style type="text/css">
+td {
+	background-color: white;
+}
+</style>
+</head>
+<body>
+	    <!-- Header -->
+	    <header id="pdHeader">
+	    </header>
+
+	<!-- Registration Form -->
+	<section id="one" class="wrapper style2">
+		<div class="inner">
+			<div class="box">
+				<div class="content">
+					<form th:action="@{/ipgo/ipgoModifyPro}" method="post"
+						name="ipgoModify">
+						<h2 class="align-center">입고 수정</h2>
+						<input type="hidden" name="ipgoNo" th:value="${ipdto.ipgoNo}" />
+						<div class="table-wrapper">
+							<table cellpadding="0" cellspacing="0">
+								<tr>
+									<td>
+										<div align="center">지점번호</div>
+									</td>
+									<td>[[${ipdto.shopNo}]]</td>
+								</tr>
+
+								<tr>
+									<td>
+										<div align="center">상품번호</div>
+									</td>
+									<td><input name="goodsNo" type="text" size="10"
+										maxlength="10" th:value = "${ipdto.goodsNo}" /></td>
+
+								</tr>
+
+								<tr>
+									<td>
+										<div align="center">입고수량</div>
+									</td>
+									<td><input name="ipgoQty" type="text" size="10"
+										maxlength="10" th:value=${ipdto.ipgoQty} /></td>
+								</tr>
+
+								<tr>
+									<td>
+										<div align="center">검수날짜</div>
+									</td>
+									<td><input name="checkDate" type="date" size="10"
+										maxlength="10" th:value=${ipdto.checkDate} /></td>
+								</tr>
+
+								<tr>
+									<td>
+										<div align="center">검수여부</div>
+									</td>
+									<td>[[${ipdto.checkOk}]]</td>
+								</tr>
+
+								<tr>
+									<td>
+										<div align="center">입고일</div>
+									</td>
+									<td>[[${ipdto.ipgoDate}]]</td>
+								</tr>
+								
+								<tr align="right">
+									<td colspan="2" ><input type="submit" value="등록" />
+									<a th:href="@{/ipgo/ipgoView}"><input
+											type="button" value="목록가기" /></a></td>
+								</tr>
+
+							</table>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<!-- Footer -->
+	<footer id="footer" class="wrapper" th:include="thymeleaf/footer"></footer>
+	<!-- Scripts -->
+	<script th:src=@{assets/js/jquery.min.js}></script>
+	<script th:src=@{assets/js/jquery.scrolly.min.js}></script>
+	<script th:src=@{assets/js/jquery.scrollex.min.js}></script>
+	<script th:src=@{assets/js/skel.min.js}></script>
+	<script th:src=@{assets/js/util.js}></script>
+	<script th:src=@{assets/js/product.js}></script>
+</body>
+
+</html>

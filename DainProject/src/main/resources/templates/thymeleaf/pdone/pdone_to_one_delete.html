@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+     layout:decorator="layout">
+<head>
+<meta charset="UTF-8">
+<title>1:1문의 게시판</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" th:href="@{/static/assets/css/productmain.css}" />
+<style type="text/css">
+td{background-color : white;}
+</style>
+</head>
+
+<body>
+
+	<!-- Header -->
+	<header role="pdHeader" th:include="thymeleaf/pdheader" id="pdHeader">
+		<a href="#Productnav" class="pdtoggle"><span>메뉴</span></a>
+	</header>
+	<!-- Nav -->
+	<nav id="Productnav" th:include="thymeleaf/Productnav"></nav>
+
+	<!-- Registration Form -->
+	<section id="one" class="wrapper style2">
+		<div class="inner">
+			<div class="box">
+				<div class="content">
+				<h2 class="align-center">1:1문의 글삭제</h2>
+				<form th:action="@{/pdone/pdoneDelPro}" method="post" name="pdonedel">
+				<input type = "hidden" name = "glibNo" th:value = "${glibNo}" />
+					<div class="table-wrapper">
+					<table cellpadding="0" cellspacing="0">
+						<tr>
+							<td align = "center"><font size = "4">글을 삭제하시겠습니까?</font></td>
+						</tr>
+						<tr>
+							<td colspan=2 align=center>
+							<a th:href="@{/pdone/pdoneList}" class="button alt">목록으로</a>
+								<input value="삭제" class="button" type="submit"></td>
+						</tr>
+						</table>
+					</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+	 
+
+<!-- Footer -->
+		<footer id="footer" class="wrapper" th:include="thymeleaf/footer"></footer>
+		<!-- Scripts -->
+		<script th:src=@{assets/js/jquery.min.js}></script>
+		<script th:src=@{assets/js/jquery.scrolly.min.js}></script>
+		<script th:src=@{assets/js/jquery.scrollex.min.js}></script>
+		<script th:src=@{assets/js/skel.min.js}></script>
+		<script th:src=@{assets/js/util.js}></script>
+		<script th:src=@{assets/js/product.js}></script>
+</body>
+ 
+</html>

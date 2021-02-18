@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	layout:decorator="layout">
+<head>
+<meta charset="UTF-8">
+<title>입고관리</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" th:href="@{/static/assets/css/productmain.css}" />
+<style type="text/css">
+td {
+	background-color: white;
+}
+
+#ipfoot {
+background-color : #F2F2F2;
+}
+ 
+</style>
+</head>
+<body>
+    <!-- Header -->
+	    <header id="pdHeader">
+	    </header>
+	<!-- Registration Form -->
+	<section id="one" class="wrapper style2">
+		<div class="inner">
+			<div class="box">
+				<div class="content">
+				<h2 class="align-center">입고삭제</h2>
+					<form th:action="@{/ipgo/ipgoDelPro}" method="post" name="ipgoDel">
+					<div class="table-wrapper">
+					
+					<input type = "hidden" name = "ipgoNo" th:value = "${ipgoNo}" />
+					<table cellpadding="0" cellspacing="0">
+						<tr>
+							<td align = "center"><font size = "4">입고등록을 취소하시겠습니까?</font></td>
+						</tr>
+						<tr>
+							<td colspan=2 align=center id = "ipfoot">
+							<a th:href="@{/ipgo/ipgoList}" class="button alt">목록으로</a>
+								<input value="삭제" class="button" type="submit"></td>
+						</tr>
+						</table>
+					</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<footer id="footer" class="wrapper" th:include="thymeleaf/footer"></footer>
+	<!-- Scripts -->
+	<script th:src=@{assets/js/jquery.min.js}></script>
+	<script th:src=@{assets/js/jquery.scrolly.min.js}></script>
+	<script th:src=@{assets/js/jquery.scrollex.min.js}></script>
+	<script th:src=@{assets/js/skel.min.js}></script>
+	<script th:src=@{assets/js/util.js}></script>
+	<script th:src=@{assets/js/product.js}></script>
+</body>
+
+</html>

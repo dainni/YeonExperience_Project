@@ -1,0 +1,13 @@
+    <div class="logo" style = "font-size : 20px; "><a href="/">YeonExperience<span> by yeondain</span></a></div>
+	<span th:if="${session.authInfo == null}">
+    <a href = "/login">login</a>
+    <a href ="sign-up/member-agree">join membership</a>
+    </span>
+    <span th:if="${session.authInfo}">
+    <a href = "로그아웃">로그인</a>
+    <a href ="mypage/Mypage">마이페이지</a>	
+    </span>
+    <a href="#" class="toggle"><span></span></a>
+
+
+

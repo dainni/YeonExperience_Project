@@ -1,0 +1,220 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	layout:decorator="layout">
+<head>
+<title>YeonExperience</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" th:href="@{/static/assets/css/main.css}" />
+<style type="text/css">
+ 
+ 
+figure {
+	width: 300px;
+	height: 200px;
+	margin: 0;
+	padding: 0;
+	background: #fff;
+	overflow: hidden;
+}
+figure:hover+span {
+	bottom: -36px;
+	opacity: 1;
+}
+
+/* Zoom In #1 */
+.hover01 figure img {
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.hover01 figure:hover img {
+	-webkit-transform: scale(1.3);
+	transform: scale(1.3);
+} 
+
+/* Slide */
+.hover05 figure img {
+	margin-left: 30px;
+	-webkit-transform: scale(1.5);
+	transform: scale(1.5);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.hover05 figure:hover img {
+	margin-left: 0;
+}
+
+</style>
+</head>
+<body class="subpage">
+
+	<!-- Header -->
+	<header id="header">
+		<div class="logo">
+			<a href="/">YeonExperience<span> by yeondain</span></a>
+		</div>
+		<a href="#menu">Menu</a>
+	</header>
+
+	<!-- Nav -->
+	<nav id="menu">
+		<ul class="links">
+			<li><a th:href=@{/}>Home</a></li>
+			<li><a href="generic.html">Generic</a></li>
+			<li><a href="elements.html">Elements</a></li>
+		</ul>
+	</nav>
+
+	<!-- One -->
+	<section id="One" class="wrapper style3">
+		<div class="inner">
+			<header class="align-center">
+				<p>
+					<font size="3">서 울 안 내</font>
+				</p>
+				<h2>YeonExperience Seoul Directions</h2>
+			</header>
+		</div>
+	</section>
+
+	<!-- Two -->
+	<section id="two" class="wrapper style2">
+		<div class="inner">
+			<div class="box">
+				<div class="content" align="left">
+					<header class="align-center">
+						<p>
+							<font size="3">seoul information guide</font>
+						</p>
+						<h2><strong> <font color = "#9c9c9c">편의시설</font></strong></h2>
+					</header>
+					
+<div class="hover01 column">
+  <div>
+    <figure><img src="https://picsum.photos/300/200?image=244" /></figure>
+    <span>Hover</span>
+   
+    <figure><img src="https://picsum.photos/300/200?image=1024" /></figure>
+    <span>Hover</span>
+   
+    <figure><img src="https://picsum.photos/300/200?image=611" /></figure>
+    <span>Hover</span>
+  </div>
+</div>
+
+<div class="hover05 column">
+  <div>
+    <figure><img src="https://picsum.photos/300/200?image=244" /></figure>
+    <span>Hover</span>
+  </div>
+  <div>
+    <figure><img src="https://picsum.photos/300/200?image=1024" /></figure>
+    <span>Hover</span>
+  </div>
+  <div>
+    <figure><img src="https://picsum.photos/300/200?image=611" /></figure>
+    <span>Hover</span>
+  </div>
+</div>
+
+					 
+					<div class="grid-style">
+					<div>
+							<div class="box" align = "center">
+					              <img alt="" th:src=@{/static/images/artzone.jpg} width = "430px" height = "300px">
+								<div class="content">
+									<header class="align-center">
+										<p><strong>YeonExperience ArtZone</strong></p>
+										<h2>ArtZone</h2>
+									</header>
+									<footer class="align-center">
+									<font color = "#737373"><strong>디자인문화상품, 공예품,섬유패션 상품 등 판매<br/>위치 : 1층 주현관 우측<br/>문의전화 : 02-3678-9870</strong></font>
+									</footer>
+								</div>
+							</div>
+						</div>
+
+						<div>
+							<div class="box" align = "center">
+					                    <img alt="" th:src=@{/static/images/cafeteria.jpeg} width = "430px" height = "300px">
+								<div class="content">
+									<header class="align-center">
+										<p><strong>YeonExperience Cafeteria</strong></p>
+										<h2>Cafeteria</h2>
+									</header>
+									<footer class="align-center">
+									<font color = "#737373"><strong>커피, 주스 등 음료, 파스타, 피자 등 식사류<br/>위치 : 1층 다다익선 뒤<br/>문의전화 : 02-504-3931</strong></font>
+									</footer>
+								</div>
+							</div>
+						</div>
+						
+						<div>
+							<div class="box" align = "center">
+					                    <img alt="" th:src=@{/static/images/foodcourt.jpeg} width = "430px" height = "300px">
+								<div class="content">
+									<header class="align-center">
+										<p><strong>YeonExperience Foodcourt</strong></p>
+										<h2>Foodcourt</h2>
+									</header>
+									<footer class="align-center">
+									<font color = "#737373"><strong>누구나 편안하게 식사와 시리얼 디저트 음료를<br/> 즐길 수 있는 식음복합공간 입니다<br/>좌석수 : 146석<br/>문의전화 : 02-720-7390</strong></font>
+									</footer>
+								</div>
+							</div>
+						</div>
+						
+							<div>
+							<div class="box" align = "center">
+							
+					                    <img alt="" th:src=@{/static/images/osulloc.PNG} width = "430px" height = "300px">
+								<div class="content">
+									<header class="align-center">
+										<p><strong>YeonExperience Osulloc</strong></p>
+										<h2>Osulloc</h2>
+									</header>
+									<footer class="align-center">
+									<font color = "#737373"><strong>
+									미술관 외부 마당과 아름다운 삼청동길이 훤히 보이는 <br/>탁 트인 전망을 자랑하는 복합 차 문화 공간입니다<br/>문의전화 : 02-739-9293</strong></font>
+									</footer>
+								</div>
+							</div>
+						</div>
+						
+						
+						</div>
+						
+						
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<footer id="footer" th:include="thymeleaf/footer">
+		<div class="container">
+			<ul class="icons">
+				<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+				<li><a href="#" class="icon fa-facebook"><span
+						class="label">Facebook</span></a></li>
+				<li><a href="#" class="icon fa-instagram"><span
+						class="label">Instagram</span></a></li>
+				<li><a href="#" class="icon fa-envelope-o"><span
+						class="label">Email</span></a></li>
+			</ul>
+		</div>
+		<div class="copyright">&copy; Untitled. All rights reserved.</div>
+	</footer>
+
+	<!-- Scripts -->
+	<script th:src=@{/static/assets/js/jquery.min.js}></script>
+	<script th:src=@{/static/assets/js/jquery.scrollex.min.js}></script>
+	<script th:src=@{/static/assets/js/skel.min.js}></script>
+	<script th:src=@{/static/assets/js/util.js}></script>
+	<script th:src=@{/static/assets/js/main.js}></script>
+</body>
+
+</html>
