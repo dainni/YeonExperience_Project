@@ -1,66 +1,17 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org"
-    xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
-     layout:decorator="layout">
-	<head>
-		<title>the Palace</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" th:href=@{/static/assets/css/main.css} />
-    </head>
-	<body class="subpage">
-
-		<!-- Header -->
-		<header id="header" th:include="thymeleaf/header"></header>
-
-        <!-- Nav -->
-        <nav id="menu" th:include="thymeleaf/nav"></nav>
-		<!-- One -->
-			<section id="one" class="wrapper style2">
-			    <div class="inner">
-			        <div class="box">
-						<div class="image fit">
-							<img th:src=@{/static/images/image01.jpg} alt="" />
-						</div>
-			            <div class="content">
-			                <form method="post" th:action="@{/login}" name="frm" id="frm" th:object="${loginCommand}">
-
-			                    <head>
-			                        <h2>회원로그인</h2>
-			                    </head>
-			                    <div class="row uniform">
-			                        <div class="6u$ 12u$(xsmall)">
-			                            <input type="text" name="userId" id="userId" placeholder="ID" th:value="${isId}"/>
-			                            <span th:text="${valid_user}" th:classappend="${valid_user != null}? 'has-error'"></span>
-			                        </div>
-			                        <div class="6u$ 12u$(xsmall)">
-			                            <input type="password" name="userPw" id="userPw" placeholder="password" />
-			                            <span th:text="${valid_pw}" th:classappend="${valid_pw != null}? 'has-error'"></span>
-			                        </div>
-			                        <div class="6u$ 12u$(xsmall)">
-			                            <input type="submit" value="로그인" class="alt" />
-			                            <input type="button" value="회원가입" class="alt" id = "regist"/>
-			                        </div>
-			                    </div>
-			                </form>
-			            </div>
-                    </div>
-                </div>
-			</section>
-
-		<!-- Footer -->	
-		<footer id="footer" class="wrapper" th:include="thymeleaf/footer"></footer>
-
-		<!-- Scripts -->
-			<script th:src=@{/static/assets/js/jquery.min.js}></script>
-			<script th:src=@{/static/assets/js/jquery.scrolly.min.js}></script>
-			<script th:src=@{/static/assets/js/jquery.scrollex.min.js}></script>
-			<script th:src=@{/static/assets/js/skel.min.js}></script>
-			<script th:src=@{/static/assets/js/util.js}></script>
-			<script th:src=@{/static/assets/js/main.js}></script>
-
-	</body>
-	<script th:src=@{http://code.jquery.com/jquery.min.js}></script>
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	layout:decorator="layout">
+<head>
+<title>YeonExperience</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" th:href="@{/static/assets/css/main.css}" />
+<style type="text/css">
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR&display=swap');
+#dain {font-family: 'Noto Serif KR', serif;
+</style>
+<script th:src=@{http://code.jquery.com/jquery.min.js}></script>
 	<script>
 		$(function () {
 			includeLayout();
@@ -82,4 +33,101 @@
 			});
 		}
 	</script>
+	
+    </head>
+	<body >
+
+		<!-- Header -->
+	<header id="header">
+		<div class="logo">
+			<a href="/">YeonExperience<span> by yeondain</span></a>
+		</div>
+		<a href="#menu">Menu</a>
+	</header>
+
+	<!-- Nav -->
+	<nav id="menu">
+		<ul class="links">
+			<li><a th:href=@{/}>Home</a></li>
+		</ul>
+	</nav>
+	
+	<!-- One -->
+	<section id="One" class="wrapper style3">
+		<div class="inner">
+			<header class="align-center">
+				<p>
+					<font size="3">로 그 인</font>
+				</p>
+				<h2>YeonExperience login</h2>
+			</header>
+		</div>
+	</section>
+	
+	
+		<!-- One -->
+			   <section id="one" class="wrapper style2">
+        <div class="inner" id= "dain">
+            <div class="box">
+                <div class="content" align = "center">
+                    <hr style = "width : 130px;"/>
+                    <h2 class="align-center" style = "font-size : 30px;"><strong>로 그 인</strong></h2>
+			                <form method="post" th:action="@{/login}" name="frm" id="frm" th:object="${loginCommand}">
+                                <header>
+                                YeonExperience미술관 홈페이지를 방문해주셔서 감사합니다.<br/>
+                                                                        로그인하시면 홈페이지를 보다 편리하게 이용하실 수 있습니다.
+                                </header>
+                                <br/>
+			                        <div class="4u$ 12u$(xsmall)">
+			                            <input type="text" name="userId" id="userId" placeholder="아이디를 입력해주세요" th:value="${isId}"/>
+			                            <span th:text="${valid_user}" th:classappend="${valid_user != null}? 'has-error'"></span>
+			                        </div>
+			                        <br/>
+			                        <div class="4u$ 12u$(xsmall)">
+			                            <input type="password" name="userPw" id="userPw" placeholder="비밀번호를 입력하세요" />
+			                            <span th:text="${valid_pw}" th:classappend="${valid_pw != null}? 'has-error'"></span>
+			                        </div>
+			                        <br/>
+									<input type="checkbox" id="saveID" name="saveID" 
+											th:attr="checked = ${isId != null} ? 'true': 'false'">
+									<label for="saveID">ID저장</label>
+								
+									<input type="checkbox" id="autologin" name="autologin">
+									<label for="autologin">자동로그인</label>
+									
+			                        <br/>
+			                        <div class="4u$ 12u$(xsmall)">
+			                            <input type="submit" value="로그인" class = "submit fit" /> &emsp;
+			                        </div>
+			                            <input type="button" value="회원가입" class="alt" id = "regist"/>
+			                </form>
+			            </div>
+                    </div>
+                </div>
+			</section>
+
+		   <!-- Footer -->
+	<footer id="footer" th:include="thymeleaf/footer">
+		<div class="container">
+			<ul class="icons">
+				<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+				<li><a href="#" class="icon fa-facebook"><span
+						class="label">Facebook</span></a></li>
+				<li><a href="#" class="icon fa-instagram"><span
+						class="label">Instagram</span></a></li>
+				<li><a href="#" class="icon fa-envelope-o"><span
+						class="label">Email</span></a></li>
+			</ul>
+		</div>
+		<div class="copyright">&copy; Untitled. All rights reserved.</div>
+	</footer>
+
+	<!-- Scripts -->
+	<script th:src=@{/static/assets/js/jquery.min.js}></script>
+	<script th:src=@{/static/assets/js/jquery.scrollex.min.js}></script>
+	<script th:src=@{/static/assets/js/skel.min.js}></script>
+	<script th:src=@{/static/assets/js/util.js}></script>
+	<script th:src=@{/static/assets/js/main.js}></script>
+</body>
+
 </html>

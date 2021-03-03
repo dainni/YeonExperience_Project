@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="finalProject.mapper.ArtWorkMapper">
+	<sql id="artcolumn">
+		ARTWORK_NO,ARTWORK_TYPE,ARTWORK_NAME ,ARTWORK_WRITER,
+		ARTWORK_PRICE,ARTWORK_TIME,ARTWORK_IMAGE,ARTWORK_CONTENT
+	</sql>
+	
+	<insert id="artworkInsert" parameterType="finalProject.domain.ArtWorkDTO">
+insert into artwork(<include refid = "artcolumn"/>)
+values(#{artworkNo},#{artworkType},#{artworkName},#{artworkWriter},#{artworkPrice},#{artworktime},#{artworkContent},#{artworkImage})
+</insert>
+</mapper>
