@@ -3,8 +3,10 @@ package finalProject.controller.Experience;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+
 @Controller
 public class ExperienceMainController {
+	
 	
 	@RequestMapping("Information_Directions")
 	public String InformationDt() {
@@ -35,4 +37,5 @@ public class ExperienceMainController {
 	public String art() {
 		return"thymeleaf/mypage234";
 	}
+	
 }

@@ -8,9 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="stylesheet" th:href="@{/static/assets/css/main.css}" />
 <style type="text/css">
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR&display=swap');
-#dain {font-family: 'Noto Serif KR', serif;
-td { background-color: white;
+td { background-color: #fff;
  }
 label {
 text-align : right;
@@ -111,7 +109,7 @@ background-color:#f0f0f0;
 
     <!-- Registration Form -->
     <section id="one" class="wrapper style2">
-        <div class="inner" id= "dain">
+        <div class="inner">
             <div class="box">
                 <div class="content">
                     <h2 class="align-center"><strong>회 원 정 보 등 록</strong></h2>
@@ -133,7 +131,7 @@ background-color:#f0f0f0;
 											<tr>
 												<td  id = "mf"><label for="userPw">PASSWORD</label></td>
 												<td><input name="userPw" id="password" type="password" placeholder="PASSWORD">
-                            <span ht:if="${#fields.hasErrors('userPw')}" th:errors="*{userPw}"></span></td>
+                            <span th:if="${#fields.hasErrors('userPw')}" th:errors="*{userPw}"></span></td>
 											</tr>
 											<tr>
 												<td  id = "mf"><label for="userPwCon" id = "mf">PASSWORD CONFIRM</label></td>

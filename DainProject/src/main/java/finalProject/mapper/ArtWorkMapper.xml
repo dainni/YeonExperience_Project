@@ -10,6 +10,29 @@
 	
 	<insert id="artworkInsert" parameterType="finalProject.domain.ArtWorkDTO">
 insert into artwork(<include refid = "artcolumn"/>)
-values(#{artworkNo},#{artworkType},#{artworkName},#{artworkWriter},#{artworkPrice},#{artworktime},#{artworkContent},#{artworkImage})
-</insert>
+values(#{artworkNo},#{artworkType},#{artworkName},#{artworkWriter},#{artworkPrice}, #{artworktime},#{artworkImage},#{artworkContent})
+</insert>  
+
+<resultMap type="finalProject.domain.ArtWorkDTO" id="artbaseList">
+<id column = "ARTWORK_NO" jdbcType="VARCHAR" property="artworkNo"/>
+<result  column = "ARTWORK_TYPE" jdbcType="VARCHAR" property="artworkType"/>
+<result  column = "ARTWORK_NAME" jdbcType="VARCHAR" property="artworkName"/>
+<result  column = "ARTWORK_WRITER" jdbcType="VARCHAR" property="artworkWriter"/>
+<result  column = "ARTWORK_PRICE" jdbcType="BIGINT" property="artworkPrice"/>
+<result  column = "ARTWORK_TIME" jdbcType="TIMESTAMP" property="artworktime"/>
+<result  column = "ARTWORK_IMAGE" jdbcType="VARCHAR" property="artworkImage"/>
+<result  column = "ARTWORK_CONTENT" jdbcType="VARCHAR" property="artworkContent"/>
+</resultMap>
+
+<select id="artList" resultMap="artbaseList" parameterType="string">
+select <include refid = "artcolumn" />
+from ARTWORK
+<where>
+<if test="value != null">
+artwork_no = #{artworkNo}
+</if>
+</where>
+</select>
+
+
 </mapper>

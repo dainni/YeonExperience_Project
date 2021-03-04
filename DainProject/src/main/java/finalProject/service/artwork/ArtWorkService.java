@@ -21,7 +21,7 @@ public class ArtWorkService {
 	@Autowired
 	ArtWorkMapper artWorkMapper;
 	
-	public void artworkPro(ArtworkCommand artworkCommand, HttpSession session) {
+	public void artworkPro(ArtworkCommand artworkCommand, HttpSession session) throws Exception{
 		// TODO Auto-generated method stub
 		
 		ArtWorkDTO awdto = new ArtWorkDTO();

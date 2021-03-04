@@ -1,6 +1,8 @@
 package finalProject.command;
 
-import java.util.Date;
+
+
+import java.sql.Date;
 
 import javax.validation.constraints.NotNull;
 

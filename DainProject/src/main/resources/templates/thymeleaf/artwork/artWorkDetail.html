@@ -134,52 +134,43 @@ nav.shift ul li a:hover:after {
     								 <col style="width:65%">
     								 </colgroup>
   
-											<tr >
-									<td id = "mf"><label for="artworkNo">작품번호</label></td>
-									<td><input name= "artworkNo" type="text"  
-										  /></td>
-								</tr>
-								
 								<tr>
 									<td id = "mf"><label for="artworkType">작품분류</label></td>
-									<td><input name="artworkType" type="text"  
-										  /></td>
+									<td>[[${awdto.artworkType}]]</td>
 								</tr>
 
 								<tr>
 									<td id = "mf"><label for="artworkName">작품명</label></td>
-									<td><input name="artworkName" type="text"  /></td>
+								<td>[[${awdto.artworkName}]]</td>
 								</tr>
 								
 
 								<tr>
 									<td id = "mf"><label for="artworkWriter">작가명</label></td>
-									<td><input name="artworkWriter" type="text"
-									 /></td>
+								<td>[[${awdto.artworkWriter}]]</td>
 								</tr>
 								
 								<tr>
 									<td id = "mf"><label for="artworkPrice">관람료</label></td>
-									<td><input name="artworkPrice" type="text"
-										 /></td>
+									<td>[[${awdto.artworkPrice}]]</td>
 								</tr>
 								
 								<tr>
 									<td id = "mf"><label for="artworktime">기간</label></td>
-									<td><input name="artworktime" type="date"
-										 />  ~ <input name="artworktime" type="date"
-										 />  </td>
+									<td>[[${awdto.artworktime}]]</td>
 								</tr>
 								
 								<tr>
 									<td id = "mf"><label for="artworkContent">작품설명</label></td>
-									<td><textarea rows="10" cols="50" name="artworkContent" style="resize: none; width : 700px;"></textarea></td>
+									<td>[[${awdto.artworkContent}]]</td>
 								</tr>
 								
 								
 								<tr>
 									<td id = "mf"><label for="artworkImage">작품이미지</label></td>
-									<td><input type="file" name="artworkImage"/><br />
+									<td>
+									<img th:src="@{'/static/artwork/upload/' + ${awdto.artworkImage}}" height = "350" width = "250"/>
+								</td>
 								</tr>
 								
 							</table>

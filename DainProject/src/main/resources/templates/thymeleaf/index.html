@@ -8,6 +8,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" th:href= "@{/static/assets/css/main.css}" />
 <style type="text/css">
+#images {
+	padding: 20px;
+}
+#list {
+background-color : #F2F2F2;
+}
 nav {
 	width: 100%; 
 	margin:  auto;
@@ -94,22 +100,24 @@ nav.shift ul li a:hover:after {
           </div>
           
 		<!-- Banner -->
-			<section class="banner half">
+			<section id="three" class="wrapper style2">
+				<div class="inner">
+				<section class="banner half">
 				<article>
 					<img th:src=@{static/images/Experience.jpg}  alt="" />
 					<div class="inner">
 						<header>
-							<p>yeon Experience by <a href="https://github.com/dainni"> yeondain</a></p>
-							<h2>YeonExperience</h2>
+							<p>yeon Experience by <a th:href="@{https://velog.io/@dainni}"> yeondain</a></p>
+							<h2 style = "color : white;">YeonExperience</h2>
 						</header>
 					</div>
 				</article>
-				<article>
-					<img th:src= @{static/images/andy.jpg} alt="" />
+			<article>
+					<img th:src= @{static/images/main2.PNG} alt="" />
 					<div class="inner">
 						<header>
 							<p>A free responsive web site template by <a href="https://templated.co">TEMPLATED</a></p>
-							<h2>ANDY WARHOL</h2>
+							<h2 style = "color : white;">ANDY WARHOL</h2>
 						</header>
 					</div>
 				</article>
@@ -122,25 +130,49 @@ nav.shift ul li a:hover:after {
 						</header>
 					</div>
 				</article>
-				<article>
-					<img th:src = @{static/images/minjun.jpg}  alt="" />
-					<div class="inner">
-						<header>
-							<p>Sed cursus aliuam veroeros lorem ipsum nullam</p>
-							<h2>Tempus dolor</h2>
-						</header>
+				</section>
+				</div>
+				</section>
+			
+					<!-- Three -->
+			<section id="three" class="wrapper style2">
+				<div class="inner">
+					<header class="align-center">
+						<p class="special">yeon Experience by yeonExperience artwork</p>
+						 <form method="post" action="/serarch">
+						 <div align = "center">
+									<div class=" ">
+										<div class="4u 12u$(small)">
+											<input type="text" name="query" id="query" value="" placeholder="검색어를 입력해주세요" />
+										</div>
+										<br/>
+										<div class="2u$ 12u$(small)">
+											<input type="button" value="Search" class="fit" />
+										</div>
+									</div>
+									</div>
+								</form>
+					</header>
+					<div>
+						<table>
+				<tr>
+					<th:block id="images" th:each="alist ,a:${artlists}">
+						<td id = "list">
+							<a
+							th:href="@{/artworkDetail(artworkNo = ${alist.artworkNo})}"><img
+								th:src="@{'/static/artwork/upload/' + ${alist.artworkImage}}"
+								height="350" width="270" />
+							</a>
+						</td>
+						<th:block th:if="${a.count % 4} == 0" th:utext = "'</tr><tr>'" />
+					</th:block>
+				</tr>
+			</table>
+						</div>
 					</div>
-				</article>
-				<article>
-					<img th:src=@{static/images/Audrey.jpg} alt="" />
-					<div class="inner">
-						<header>
-							<p>Lorem ipsum dolor sit amet nullam feugiat</p>
-							<h2>Magna etiam</h2>
-						</header>
-					</div>
-				</article>
 			</section>
+			
+			
 			
 					<!-- Two -->
 			<section id="two" class="wrapper style3">
@@ -202,40 +234,10 @@ nav.shift ul li a:hover:after {
 			</section>
 		 
 
-			
+	 
 			
 
-		<!-- Three -->
-			<section id="three" class="wrapper style2">
-				<div class="inner">
-					<header class="align-center">
-						<p class="special">Nam vel ante sit amet libero scelerisque facilisis eleifend vitae urna</p>
-						<h2>Morbi maximus justo</h2>
-					</header>
-					<div class="gallery">
-						<div>
-							<div class="image fit">
-								<a href="#"><img th:src= @{static/images/andy2.jpg} alt="" height = "400"/></a>
-							</div>
-						</div>
-						<div>
-							<div class="image fit">
-								<a href="#"><img th:src= @{static/images/gotic2.PNG} alt="" height = "400"/></a>
-							</div>
-						</div>
-						<div>
-							<div class="image fit">
-								<a href="#"><img src="images/pic03.jpg" alt="" /></a>
-							</div>
-						</div>
-						<div>
-							<div class="image fit">
-								<a href="#"><img src="images/pic04.jpg" alt="" /></a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
+
 
 
 		<!-- Footer -->
