@@ -57,8 +57,6 @@ public class ArtWorkController {
 	   return "thymeleaf/artwork/artWorkDetail";
 	   //값 가져와야지이
    }
-	
-	
-
+   
 	
 }

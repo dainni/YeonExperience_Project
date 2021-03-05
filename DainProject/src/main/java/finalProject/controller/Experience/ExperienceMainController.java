@@ -1,12 +1,19 @@
 package finalProject.controller.Experience;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import finalProject.service.artwork.AartWorkDetailService;
 
 
 @Controller
 public class ExperienceMainController {
-	
+	      @Autowired
+	      AartWorkDetailService artworkDetailService;
+	     
 	
 	@RequestMapping("Information_Directions")
 	public String InformationDt() {
@@ -36,6 +43,17 @@ public class ExperienceMainController {
 	@RequestMapping("art")
 	public String art() {
 		return"thymeleaf/mypage234";
+	}
+	
+	@RequestMapping("artworkUserDetail")
+	   public String artworkDetail(@RequestParam(value = "artworkNo")String artworkNo, Model model) {
+		   artworkDetailService.artworkDetail(artworkNo,model);
+		   return "thymeleaf/artwork/artWorkUserDetail";
+	   }
+	
+	@RequestMapping("popup")
+	public String popup() {
+		return"thymeleaf/popup";
 	}
 	
 }

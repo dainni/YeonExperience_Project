@@ -12,6 +12,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR&display=swap');
 #dain {font-family: 'Noto Serif KR', serif;
 }
+th{
+background-color: #f2f2f2;
+}
 nav {
 	width: 80%;
 	margin: 0 auto;
@@ -112,27 +115,24 @@ nav.shift ul li a:hover:after {
 			<div class="box">
 				<div class="content" align="center">
 
-						<table class="alt">
+						<table>
 								<thead>
 									<tr>
-										<th>작품번호</th>
-										<th>작품분류</th>
-										<th>작품명</th>
-										<th>작가명</th>
-										<th>기간</th>
-										<th>관람료</th>
-										<th>작품설명</th>
+										<th>공지번호</th>
+										<th>제목</th>
+										<th>작성자</th>
+										<th>작성일</th>
+										<th>조회수</th>
 									</tr>
 								</thead>
 								<tbody>
-									 <th:block th:each = "g:${glists}">
+									 <th:block th:each = "an:${antLists}">
 									 <tr>
-									 <td>[[${g.goodsType}]]</td>
-									 <td><a th:href = "@{/goods/goodsDetail(goodsNo = ${g.goodsNo})}">[[${g.goodsNo}]]</a></td>
-									 <td>[[${g.goodsName}]]</td>
-									 <td>[[${g.goodsPrice}]]</td>
-									 <td th:text = "${#dates.format(g.goodsReg,'yyyy-MM-dd')}" >
-									 <td>[[${g.goodsCount}]]</td>
+									 <td>[[${an.artnoticeNo}]]</td>
+									 <td>[[${an.artnoticeSub}]]</td>
+									 <td>[[${an.artnoticeWriter}]]</td>
+									 <td th:text = "${#dates.format(an.artnoticeDate,'yyyy-MM-dd')}" >
+									 <td>[[${an.artreadCount}]]</td>
 									 </tr>
 									 </th:block>
 								</tbody>
@@ -142,8 +142,8 @@ nav.shift ul li a:hover:after {
 									</tr>
 									<tr align="right">
 										<td colspan="6">
-										<a th:href = "@{/pdAdmin}" ><input type = "button" value="목록"/></a>
-									<a th:href="@{artworkForm}"><input type = "button" value="전시등록"/></a>
+										<a th:href = "@{/}" ><input type = "button" class = "button alt" value="목록"/></a>
+									<a th:href="@{/artnotice/artworkForm}"><input type = "button" class = "button alt" value="공지사항등록"/></a>
 									</td>
 									</tr>
 								</tfoot>

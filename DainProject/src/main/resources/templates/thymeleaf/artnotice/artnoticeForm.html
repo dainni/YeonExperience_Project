@@ -104,7 +104,7 @@ nav.shift ul li a:hover:after {
 						<nav class="shift">
 							<ul>
 								<li><a th:href="@{/AartWork}">전시등록</a></li>
-								<li><a href="#">About</a></li>
+								<li><a th:href="@{/ArtNoticeList}">공지사항</a></li>
 								<li><a href="#">Downloads</a></li>
 								<li><a href="#">More</a></li>
 								<li><a href="#">Nice staff</a></li>
@@ -124,8 +124,8 @@ nav.shift ul li a:hover:after {
                 <div class="content">
                     <h2 class="align-center"><strong>공 지 사 항 등 록</strong></h2>
                     <hr />
-					<form th:action="@{/artworkFormPro}" method="post" name="artworkFormPro"
-					th:object="${artworkCommand}" enctype = "multipart/form-data">
+					<form th:action="@{/artnotice/artnoticeFormPro}" method="post" name="rtnoticeFormPro"
+					th:object="${artnoticeCommand}">
 
 						<div class="table-wrapper">
 								<table class="alt">
@@ -135,59 +135,37 @@ nav.shift ul li a:hover:after {
     								 </colgroup>
   
 											<tr >
-									<td id = "mf"><label for="artworkNo">작품번호</label></td>
-									<td><input name= "artworkNo" type="text"  
+									<td id = "mf"><label for="artnoticeNo">공지번호</label></td>
+									<td><input name= "artnoticeNo" type="text"  
 										  /></td>
 								</tr>
 								
 								<tr>
-									<td id = "mf"><label for="artworkType">작품분류</label></td>
-									<td><input name="artworkType" type="text"  
+									<td id = "mf"><label for="artnoticeSub">제목</label></td>
+									<td><input name="artnoticeSub" type="text"  
 										  /></td>
 								</tr>
 
 								<tr>
-									<td id = "mf"><label for="artworkName">작품명</label></td>
-									<td><input name="artworkName" type="text"  /></td>
+									<td id = "mf"><label for="artnoticeCon">내용</label></td>
+									<td><textarea rows="10" cols="50" name="artnoticeCon" style="resize: none; width : 700px;"></textarea></td>
 								</tr>
 								
-
-								<tr>
-									<td id = "mf"><label for="artworkWriter">작가명</label></td>
-									<td><input name="artworkWriter" type="text"
-									 /></td>
-								</tr>
 								
 								<tr>
-									<td id = "mf"><label for="artworkPrice">관람료</label></td>
-									<td><input name="artworkPrice" type="text"
-										 /></td>
-								</tr>
-								
-								<tr>
-									<td id = "mf"><label for="artworktime">기간</label></td>
-									<td><input name="artworktime" type="date"
+									<td id = "mf"><label for="artnoticeWriter">작성자</label></td>
+									<td><input name="artnoticeWriter" type="text"
 										 />  ~   </td>
 								</tr>
 								
-								<tr>
-									<td id = "mf"><label for="artworkContent">작품설명</label></td>
-									<td><textarea rows="10" cols="50" name="artworkContent" style="resize: none; width : 700px;"></textarea></td>
-								</tr>
-								
-								
-								<tr>
-									<td id = "mf"><label for="artworkImage">작품이미지</label></td>
-									<td><input type="file" name="artworkImage"/><br />
-								</tr>
 								
 							</table>
 						</div>
 						 <ul class="actions small" style = "text-align : right;">
-                            <li><input value="목록" onclick="javascript: history.back();" class="button alt"
+                            <li><input value="뒤로가기" onclick="javascript: history.back();" class="button alt"
                                     type="button">
                             </li>
-                            <li><input value="작품등록" class="button alt" type="submit"></li>
+                            <li><input value="공지등록" class="button alt" type="submit"></li>
                         </ul>
 					</form>
 				</div>

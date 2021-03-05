@@ -8,6 +8,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="stylesheet" th:href="@{/static/assets/css/main.css}" />
 <style type="text/css">
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR&display=swap');
+#dain {font-family: 'Noto Serif KR', serif;
+}
+td,table { background-color: white;
+ width : 400px;
+height : 2px;
+ }
+label {
+text-align : right;
+}
+#mf {
+background-color:#f0f0f0;
+font-size: 50px;
+}
+
 nav {
 	width: 80%;
 	margin: 0 auto;
@@ -70,27 +85,26 @@ nav.shift ul li a:hover:after {
 	visibility: visible;
 	height: 100%;
 }
- 
 </style>
-</head>
-<body class="subpage">
+	</head>
+	<body class="subpage">
 
-	<!-- Header -->
+		<!-- Header -->
 	<header id="header">
 		<div class="logo">
 			<a href="/">YeonExperience<span> by yeondain</span></a>
 		</div>
+		<a href="#menu">Menu</a>
 	</header>
- 
-
+	
 	<!-- One -->
 	<section id="One" class="wrapper style3">
-		<div class="inner">
+		<div class="inner"   >
 			<header class="align-center">
 						<nav class="shift">
 							<ul>
-								<li><a th:href="@{artworkList}">전시등록</a></li>
-								<li><a th:href="@{/artnotice/artnoticeList}">공지사항</a></li>
+								<li><a th:href="@{/AartWork}">전시등록</a></li>
+								<li><a href="#">About</a></li>
 								<li><a href="#">Downloads</a></li>
 								<li><a href="#">More</a></li>
 								<li><a href="#">Nice staff</a></li>
@@ -100,21 +114,58 @@ nav.shift ul li a:hover:after {
 		</div>
 	</section>
 
-	<!-- Two -->
-	<section id="two" class="wrapper style2">
-		<div class="inner">
-			<div class="box">
-				<div class="content" align="left">
+		<!-- Two -->
+			<section id="two" class="wrapper style2">
+				<div class="inner" id = "dain">
+					<div class="box">
+						<div class="content" align = "center">
+							<header class="align-center">
+								<h2 style = "font-size: 30px;"><strong>전 시</strong> </h2>
+								<div align = "center"><hr style  = "width : 200px;"/></div>
+							</header>
+							
+							<p style = "font-size: 25px;"><strong>[[${awdto.artworkName}]]</strong></p>
+							<p><img th:src="@{'/static/artwork/upload/' + ${awdto.artworkImage}}" height = "400" width = "280"/></p>
  
-					
-			
+                             <div class="table-wrapper">
+								<table  >
+								 <colgroup>
+   									 <col style="width:35%">
+    								 <col style="width:65%">
+    								 </colgroup>
+  
+								<tr>
+									<td id = "mf"><label for="artworkType">작품분류</label></td>
+									<td>[[${awdto.artworkType}]]</td>
+								</tr>
+								<tr>
+									<td id = "mf"><label for="artworkWriter">작가명</label></td>
+								<td>[[${awdto.artworkWriter}]]</td>
+								</tr>
+								
+								<tr>
+									<td id = "mf"><label for="artworkPrice">관람료</label></td>
+									<td>[[${awdto.artworkPrice}]]</td>
+								</tr>
+								<tr>
+									<td id = "mf"><label for="artworktime">기간</label></td>
+									<td>[[${awdto.artworktime}]]</td>
+								</tr>
+								<tr>
+									<td id = "mf"><label for="artworktime">관람장소</label></td>
+									<td><a th:href=" @{/artworkUserDetail(artworkNo = ${awdto.artworkNo})}" onclick="javascript:window.open('/popup','new','left=300, top=700, width=1000, height=600')"  style = "color : red;">전관 →</a></td>
+								</tr>
+								
+								</table>
+								</div>
+								
+								<p>[[${awdto.artworkContent}]]</p>
+						</div>
+					</div>
 				</div>
+			</section>
 
-			</div>
-		</div>
-	</section>
-
-	<!-- Footer -->
+		<!-- Footer -->
 	<footer id="footer" th:include="thymeleaf/footer">
 		<div class="container">
 			<ul class="icons">
@@ -131,13 +182,9 @@ nav.shift ul li a:hover:after {
 	</footer>
 
 	<!-- Scripts -->
-
-
 	<script th:src=@{/static/assets/js/jquery.min.js}></script>
 	<script th:src=@{/static/assets/js/jquery.scrollex.min.js}></script>
 	<script th:src=@{/static/assets/js/skel.min.js}></script>
 	<script th:src=@{/static/assets/js/util.js}></script>
 	<script th:src=@{/static/assets/js/main.js}></script>
 </body>
-
-</html>

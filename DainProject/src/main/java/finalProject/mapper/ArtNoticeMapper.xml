@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace = "finalProject.mapper.ArtNoticeMapper">
+<sql id="anasecolumn">
+ARTNOTICE_NO, ARTNOTICE_SUB, ARTNOTICE_CON, ARTREAD_COUNT, ARTNOTICE_DATE, ARTNOTICE_WRITER 
+</sql>
+
+<insert id="artnoticeInsert" parameterType="finalProject.domain.ArtNoticeDTO">
+insert into artnotice(<include refid = "anasecolumn"/>)
+values(#{artnoticeNo},#{artnoticeSub},#{artnoticeCon},0,sysdate,#{artnoticeWriter})
+</insert>
+
+<resultMap type="finalProject.domain.ArtNoticeDTO" id="antbaseList">
+<id column = "ARTNOTICE_NO" jdbcType="VARCHAR" property="artnoticeNo"/>
+<result  column = "ARTNOTICE_SUB" jdbcType="VARCHAR" property="artnoticeSub"/>
+<result  column = "ARTNOTICE_CON" jdbcType="VARCHAR" property="artnoticeCon"/>
+<result  column = "ARTREAD_COUNT" jdbcType="BIGINT" property="artreadCount"/>
+<result  column = "ARTNOTICE_DATE" jdbcType="TIMESTAMP" property="artnoticeDate"/>
+<result  column = "ARTNOTICE_WRITER" jdbcType="VARCHAR" property="artnoticeWriter"/>
+</resultMap>
+
+<select id="artnoticeList" resultMap="antbaseList" parameterType="string">
+select <include refid = "anasecolumn" />
+from ARTNOTICE
+</select>
+
+</mapper>

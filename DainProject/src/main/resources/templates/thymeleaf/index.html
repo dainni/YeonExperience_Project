@@ -76,6 +76,7 @@ nav.shift ul li a:hover:after {
 	visibility: visible;
 	height: 100%;
 }
+
 </style>	
 	 <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
 	</head>
@@ -122,11 +123,11 @@ nav.shift ul li a:hover:after {
 					</div>
 				</article>
 				<article>
-					<img th:src= @{static/images/gotic.PNG}  alt="" />
+					<img th:src= @{static/images/main3.PNG}  alt="" />
 					<div class="inner">
 						<header>
 							<p>Ipsum dolor sed magna veroeros lorem ipsum</p>
-							<h2>Lorem adipiscing</h2>
+							<h2 style = "color : white;">Lorem adipiscing</h2>
 						</header>
 					</div>
 				</article>
@@ -159,10 +160,14 @@ nav.shift ul li a:hover:after {
 					<th:block id="images" th:each="alist ,a:${artlists}">
 						<td id = "list">
 							<a
-							th:href="@{/artworkDetail(artworkNo = ${alist.artworkNo})}"><img
+							th:href="@{/artworkUserDetail(artworkNo = ${alist.artworkNo})}"><img
 								th:src="@{'/static/artwork/upload/' + ${alist.artworkImage}}"
 								height="350" width="270" />
 							</a>
+							<p align = "center">
+							[[${alist.artworkType}]]<br /> [[${alist.artworkName}]]<br />
+								~[[${#dates.format(alist.artworktime,'yyyy-MM-dd')}]]
+							</p>
 						</td>
 						<th:block th:if="${a.count % 4} == 0" th:utext = "'</tr><tr>'" />
 					</th:block>
@@ -171,8 +176,7 @@ nav.shift ul li a:hover:after {
 						</div>
 					</div>
 			</section>
-			
-			
+			<a href="#" onclick="javascript:window.open('경로','new','left=50, top=50, width=800, height=600')">링크</a>
 			
 					<!-- Two -->
 			<section id="two" class="wrapper style3">
@@ -195,19 +199,33 @@ nav.shift ul li a:hover:after {
 
 						<div>
 							<div class="box">
-								<div class="image fit">
-								</div>
 								<div class="content">
 									<header class="align-center">
 										<p>YeonExperience Information</p>
-										<h2>Guide</h2>
+						<a th:href="@{/Information_Parking}"> 공지사항</a> 
 									</header>
 								<br/>
-								<br/>
-									<footer class="align-center">
-										<a th:href="@{/Information_Seoul}" class="button alt">오시는길</a>&nbsp;
-										<a th:href="@{/Information_Seoul}" class="button alt">편의시설</a>&nbsp;
-									</footer>
+								<table>
+								<thead>
+									<tr>
+										<th>공지번호</th> 
+										<th>제목</th>
+										<th>작성일</th>
+										<th>조회수</th>
+									</tr>
+								</thead>
+								
+								<tbody>
+									 <th:block th:each = "an:${antLists}">
+									 <tr>
+									 <td><i class="fas fa-volume-up fa-1x"></i>&nbsp;[[${an.artnoticeNo}]]</td>
+									 <td>[[${an.artnoticeSub}]]</td>
+									 <td th:text = "${#dates.format(an.artnoticeDate,'yyyy-MM-dd')}" >
+									 <td>[[${an.artreadCount}]]</td>
+									 </tr>
+									 </th:block>
+								</tbody>
+							</table>
 								</div>
 							</div>
 						</div>
@@ -221,7 +239,7 @@ nav.shift ul li a:hover:after {
 										<h1>오시는길</h1>
 										<h2>Vestibulum sit amet</h2>
 									</header>
-									<p> Cras aliquet urna ut sapien tincidunt, quis malesuada elit facilisis. Vestibulum sit amet tortor velit. Nam elementum nibh a libero pharetra elementum. Maecenas feugiat ex purus, quis volutpat lacus placerat malesuada.</p>
+ 							<p> Cras aliquet urna ut sapien tincidunt, quis malesuada elit facilisis. Vestibulum sit amet tortor velit. Nam elementum nibh a libero pharetra elementum. Maecenas feugiat ex purus, quis volutpat lacus placerat malesuada.</p>
 									<footer class="align-center">
 										<a href="#" class="button alt">Learn More</a>
 									</footer>
